@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>MediasTemperaturas.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #8c8c8c; font-style: italic;}
+.s3 { color: #1750eb;}
+.s4 { color: #067d17;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MediasTemperaturas.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">Exercicios;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Arrays; </span><span class="s2">//primeira vez que importei essa biblioteca</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+<span class="s0">public class </span><span class="s1">MediasTemperaturas {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s0">int</span><span class="s1">[] listaTemperatura = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">5</span><span class="s1">]; </span><span class="s2">// o exercício 12 pedia 20 mas assim eh mais rapido</span>
+        <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+
+        <span class="s2">//---------------------------------Obtenção dos 20 registros de temperatura ------------------------------//</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s1">; i &lt; listaTemperatura.length; i++) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Informe a temperatura número &quot; </span><span class="s1">+ (i + </span><span class="s3">1</span><span class="s1">));</span>
+            <span class="s0">int </span><span class="s1">temp = input.nextInt();</span>
+            <span class="s1">listaTemperatura[i] = temp; </span><span class="s2">//essa é a estrutura pra adicionar o valor de cada entrada pra cada posição da array</span>
+        <span class="s1">}</span>
+        <span class="s2">// String resultado = Arrays.toString(listaTemperatura); essa linha e a biblioteca eu escrevi pra checar</span>
+        <span class="s2">//System.out.println(resultado);</span>
+
+      <span class="s2">/*  do { 
+            System.out.println(&quot;Informe a temperatura número &quot;  + (ListaTemperatura.size() + 1)); 
+            temp = input.nextInt(); 
+            ListaTemperatura.add(temp); 
+        } while  (temp &lt; ListaTemperatura.size()); */</span>
+
+<span class="s2">//------------------------- classificacao dos elementos-------------</span>
+
+        <span class="s0">int </span><span class="s1">menor = listaTemperatura[</span><span class="s3">0</span><span class="s1">]; </span><span class="s2">//acertei sem saber, na tentativa de usar um valor pertencente à array</span>
+        <span class="s0">int </span><span class="s1">maior = listaTemperatura[</span><span class="s3">0</span><span class="s1">];</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s1">; i &lt; listaTemperatura.length; i++) {</span>
+            <span class="s0">if </span><span class="s1">(listaTemperatura[i] &lt; menor) {</span>
+                <span class="s1">menor = listaTemperatura[i];</span>
+            <span class="s1">}</span>
+
+            <span class="s0">if </span><span class="s1">(listaTemperatura[i] &gt; maior) {</span>
+                <span class="s1">maior = listaTemperatura[i];</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s0">int </span><span class="s1">soma = </span><span class="s3">0</span><span class="s1">; </span><span class="s2">// declarando a variável que vai receber a soma dos 20 registros</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s1">; i &lt; listaTemperatura.length; i++) {</span>
+            <span class="s1">soma += listaTemperatura[i];</span>
+        <span class="s1">}</span>
+        <span class="s0">int </span><span class="s1">media = (soma / listaTemperatura.length); </span><span class="s2">// declarando a variável e já atribuindo o valor através da fórmula soma dividido</span>
+        <span class="s2">// pelo número de elementos da array, caso eu queira variar.</span>
+        
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Menor temperatura em °C: &quot; </span><span class="s1">+ menor);</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Maior temperatura em °C: &quot; </span><span class="s1">+ maior);</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Temperaturas somadas: &quot; </span><span class="s1">+ soma);</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Quantidade de registros: &quot; </span><span class="s1">+ listaTemperatura.length);</span>
+        <span class="s1">System.out.println(</span><span class="s4">&quot;Média das temperaturas em °C: &quot; </span><span class="s1">+ media);</span>
+
+
+
+        <span class="s2">//------------exibição das solicitacoes-----------------------------</span>
+
+
+
+
+
+        <span class="s1">input.close();</span>
+
+
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
